@@ -1,0 +1,9 @@
+data:
+  input_dir: data/insat_real
+  output_dir: outputs
+  thresholds:
+    irbt: 240
+    min_area: 100
+processing:
+  chunk_size: 1000
+  parallel_workers: auto

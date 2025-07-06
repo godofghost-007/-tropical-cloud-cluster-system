@@ -1,0 +1,34 @@
+data:
+  input_dir: "data/insat_3d/raw"
+  output_dir: "data/insat_3d/processed"
+  region:
+    lat_range: [-30, 30]
+    lon_range: [40, 100]
+  thresholds:
+    irbt: 220  # Kelvin
+    min_area: 34800  # km²
+    pixel_resolution: 4  # km/pixel
+  formats: ['.nc', '.hdf', '.h5', '.h4']
+  variables:
+    ir_channel: 'ch4'
+    tb_aliases: ['Tb', 'brightness_temperature', 'BT', 'temp_11um']
+  calibration:
+    hdf4:
+      scale_factor: 0.01
+      add_offset: 0
+    netcdf:
+      scale_factor: 1.0
+
+processing:
+  use_gpu: false
+  num_workers: 4
+  max_memory: "8GB"
+
+tracking:
+  max_distance: 400  # km between timesteps
+  independence_threshold: 1200  # km
+
+output:
+  visualization: true
+  csv_output: true
+  hdf5_archive: true 

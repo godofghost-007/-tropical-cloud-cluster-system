@@ -1,0 +1,2 @@
+timestamp,datetime,track_id,center_lat,center_lon,pixel_count,area_km2,min_tb,mean_tb,median_tb,std_tb,max_radius,min_radius,mean_radius,max_height,mean_height,cloud_top_height_km,cyclogenesis_risk,duration_hours,timestep
+2025-07-06 01:30:53.698631,2025-07-06 01:30:53.698631,1,5.0,60.0,2323.0,37168.0,0.0,210.13037031868987,210.13788781898583,5.811192385601614,3611.244306422757,689.91349445634,2224.445703695213,11.99994387188293,11.797392593626205,11.99994387188293,0.1,0.0,0

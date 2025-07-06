@@ -1,0 +1,48 @@
+data:
+  input_dir: "data/insat_real"
+  output_dir: "outputs"
+  region:
+    lat_range: [5, 25]
+    lon_range: [60, 90]
+  thresholds:
+    irbt: 220
+    min_area: 34800  # 34,800 km²
+    min_radius: 111   # 1° ≈ 111 km
+  tracking:
+    search_radii:
+      3: 450
+      6: 550
+      9: 600
+      12: 650
+    max_gap: 12  # hours
+    independence_dist: 1200  # km
+  resolution_km: 4.0
+
+convection:
+  tb_to_height:
+    a: 12.0
+    b: -0.02
+    c: 200
+
+ml:
+  risk_model:
+    type: "isolation_forest"
+    n_estimators: 100
+    contamination: 0.1
+    random_state: 42
+  features:
+    - "min_tb"
+    - "max_height"
+    - "mean_radius"
+    - "pixel_count"
+    - "intensity_proxy"
+
+visualization:
+  save_plots: true
+  plot_format: "png"
+  dpi: 150
+  colormap: "viridis"
+  risk_colors:
+    low: "yellow"
+    medium: "orange"
+    high: "red" 
