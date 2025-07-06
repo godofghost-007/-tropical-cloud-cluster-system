@@ -1,0 +1,6 @@
+# System packages required for deployment
+libgdal-dev
+gdal-bin
+proj-bin
+libproj-dev
+libgeos-dev 
